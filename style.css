@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+.header {
+  position: fixed;
+  z-index: 1500;
+  background-color: #023e8a;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 6.25em;
+  .logo {
+    padding: 1em 1em 0.5em 1em;
+    height: 4em;
+  }
+  .menuButton {
+    position: absolute;
+    left: 2em;
+    top: 2em;
+    transition: transform 0.2s;
+    .hamburger {
+      height: 2em;
+    }
+  }
+  .menuButton:hover {
+    transform: scale(1.5);
+  }
+}
+
+.navbar {
+  z-index: 15000;
+  font-family: "Roboto";
+  font-weight: 400;
+  position: fixed;
+  background-color: #ade8f4;
+  top: 6.25em;
+  height: 100%;
+  width: 17em;
+  .ul {
+    list-style: none;
+    .li {
+      padding: 0.75em 1.25em;
+    }
+    .li:hover {
+      background-color: #48cae4;
+    }
+    .selected {
+      background-color: #0096c7;
+    }
+    .unselectable {
+      padding: 0.75em 1.25em;
+      font-weight: 1000;
+    }
+  }
+}
+.main {
+  padding-top: 6.25em;
+}
