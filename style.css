@@ -54,4 +54,12 @@
 }
 .main {
   padding-top: 6.25em;
+  max-width: 900px;
+  margin-inline: calc((100vw - 900px) / 2);
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    margin-inline: 0;
+  }
 }
