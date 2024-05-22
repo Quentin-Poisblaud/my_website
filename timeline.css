@@ -79,34 +79,72 @@
   position: absolute;
   display: inline-block;
   top: calc(50% - 8px);
-  text-align: center;
   font-size: 14px;
   font-weight: bold;
   color: #023e8a;
-  text-transform: uppercase;
   letter-spacing: 1px;
   z-index: 1;
 }
 
 /* Left date position */
 .container.left .date {
-  right: -75px;
+  left: calc(100% + 20px);
+  width: 100%;
+  text-align: left;
 }
 
 /* Right date position */
 .container.right .date {
-  left: -75px;
+  right: calc(100% + 20px);
+  width: 100%;
+  text-align: right;
+}
+
+.container .icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: calc(50% - 20px);
+  border: 2px solid #023e8a;
+  background-color: white;
+  border-radius: 40px;
+  color: #023e8a;
+  z-index: 1;
+}
+
+.container.left .icon {
+  right: 31px;
+}
+
+.container.right .icon {
+  left: 31px;
 }
 
 /* Container position */
 .container .content {
-  padding: 0 15px 0 0;
+  padding: 0 29px 0 0;
+  margin: 0 21px 0 0;
   position: relative;
+  border-bottom: solid 1px #000000;
+  border-top-right-radius: 100%;
+}
+.container .content::after {
+  content: "";
+  background: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 50%;
+  width: 1px;
 }
 
 /* Right container position */
 .container.right .content {
-  padding: 0 0 0 15px;
+  padding: 0 0 0 29px;
+  margin: 0 0 0 21px;
+}
+.container.right .content::after {
+  left: 0;
 }
 
 /* Title font */
@@ -118,7 +156,8 @@
 }
 
 /* Paragraph font */
-.container .content p {
+.container .content p,
+.container .content ul {
   margin: 0;
   font-size: 16px;
   line-height: 22px;
@@ -128,13 +167,13 @@
 @media (max-width: 900px) {
   /* Adapt timeline */
   .timeline::after {
-    left: 90px;
+    left: 140px;
   }
 
   /* Adapt container */
   .container {
     width: 100%;
-    padding-left: 120px;
+    padding-left: 170px;
     padding-right: 30px;
   }
 
@@ -146,25 +185,38 @@
   /* Circle position */
   .container.left::after,
   .container.right::after {
-    left: 82px;
+    left: 132px;
   }
 
   /* Horizontal line position*/
   .container.left::before,
   .container.right::before {
-    left: 100px;
+    left: 150px;
   }
 
   /* Date position */
   .container.left .date,
   .container.right .date {
+    left: calc(-100% + 120px);
+    width: 100%;
+    text-align: right;
+  }
+
+  .container.left .icon,
+  .container.right .icon {
     right: auto;
-    left: 15px;
+    left: 171px;
   }
 
   /* Content position */
   .container.left .content,
   .container.right .content {
-    padding: 0 0 0 15px;
+    padding: 0 0 0 29px;
+    margin: 0 0 0 21px;
+  }
+
+  .container.left .content::after,
+  .container.right .content::after {
+    left: 0;
   }
 }
