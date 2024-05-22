@@ -1,0 +1,170 @@
+.timeline *,
+.timeline *::before,
+.timeline *::after {
+  box-sizing: border-box;
+}
+
+.timeline {
+  position: relative;
+}
+
+/* Central line settings*/
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: #023e8a;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+/* Container settings */
+.container {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+/* Left container position */
+.container.left {
+  left: 0;
+}
+
+/* Right container position */
+.container.right {
+  left: 50%;
+}
+
+/* Circles settings */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #ffffff;
+  border: 2px solid #023e8a;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+/* Left circle position */
+.container.right::after {
+  left: -8px;
+}
+
+/* Horizontal line settings */
+.container::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  top: calc(50% - 1px);
+  right: 8px;
+  background: #023e8a;
+  z-index: 1;
+}
+
+/* Right horizontal line position */
+.container.right::before {
+  left: 8px;
+}
+
+/* Date font */
+.container .date {
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 8px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #023e8a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+/* Left date position */
+.container.left .date {
+  right: -75px;
+}
+
+/* Right date position */
+.container.right .date {
+  left: -75px;
+}
+
+/* Container position */
+.container .content {
+  padding: 0 15px 0 0;
+  position: relative;
+}
+
+/* Right container position */
+.container.right .content {
+  padding: 0 0 0 15px;
+}
+
+/* Title font */
+.container .content h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #023e8a;
+}
+
+/* Paragraph font */
+.container .content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@media (max-width: 900px) {
+  /* Adapt timeline */
+  .timeline::after {
+    left: 90px;
+  }
+
+  /* Adapt container */
+  .container {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+
+  /* Adapt right container */
+  .container.right {
+    left: 0%;
+  }
+
+  /* Circle position */
+  .container.left::after,
+  .container.right::after {
+    left: 82px;
+  }
+
+  /* Horizontal line position*/
+  .container.left::before,
+  .container.right::before {
+    left: 100px;
+  }
+
+  /* Date position */
+  .container.left .date,
+  .container.right .date {
+    right: auto;
+    left: 15px;
+  }
+
+  /* Content position */
+  .container.left .content,
+  .container.right .content {
+    padding: 0 0 0 15px;
+  }
+}
